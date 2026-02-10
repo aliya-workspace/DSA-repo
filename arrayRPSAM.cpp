@@ -42,9 +42,18 @@ class myarray{
             }
             
         }
-        cout <<"Maximum number in array is: " <<max;
+        cout <<"Maximum number in array is: " <<max <<endl;
     }
-    
+    void minimum(){
+        int min=arr[0];
+        for(int i=0;i<size;i++){
+            if(arr[i]<min){
+                min=arr[i];
+            }
+            
+        }
+        cout <<"Mainimum number in array is: " <<min;
+    }
 
 
 };
@@ -54,5 +63,6 @@ int main(){
     s.print();
     s.sum();
     s.maximum();
+    s.minimum();
     return 0;
 }
