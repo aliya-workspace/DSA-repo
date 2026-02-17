@@ -2,6 +2,7 @@
 #define ARRAY_H
 
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 template <class T>
@@ -60,15 +61,19 @@ class array{
     return min;
 }
 
-   void  sortarray(){
+   void arraysort(){
     for(int i=0;i<size-1;i++){
-        for(int j=i+1;j<size;j++){
-            if(arr[i]>arr[j]){
-                swap(arr[i],arr[j]);
+        for(int j=0;j<size-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr[j],arr[j+1]);
             }
         }
     }
-}
+   }
+   //bubble sorting can also be done manually... by using T temp = arr[j];
+   //arr[j] = arr[j+1];
+    //arr[j+1] = temp;  instead of swap function...
+
 
 int linearsearch(T key){
     for(int i=0;i<size;i++){

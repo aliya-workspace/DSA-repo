@@ -15,12 +15,13 @@ int main() {
     cout << "Average: " << a.average() << endl;
     cout << "Maximum: " << a.maximum() << endl;
     cout << "Minimum: " << a.minimum() << endl;
-    a.display();
+    
 
     cout << "Sorted array: ";
-    a.sortarray();
+    a.arraysort();
+    a.display();
     
-    cout <<"/nEnter key you want to find: ";
+    cout <<"\nEnter key you want to find: \n";
     cin >>key;
     int result = a.linearsearch(key);
     if(result!=-1){
