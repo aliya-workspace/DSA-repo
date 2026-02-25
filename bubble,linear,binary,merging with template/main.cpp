@@ -5,5 +5,6 @@ int main(){
     s.print();
     s.bubblesort();
     s.linearSearch(6);
+    s.binarysearch(7);
     return 0;
 }

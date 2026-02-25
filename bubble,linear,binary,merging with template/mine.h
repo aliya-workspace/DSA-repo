@@ -16,6 +16,7 @@ class array{
     void print();
     void bubblesort();
     void linearSearch(T key);
+    void binarysearch(T key);
    
 };
 
@@ -60,6 +61,40 @@ void array<T>:: linearSearch(T key){
     }
     return -1;
 }
+
+template <typename T>
+void array <T>:: binarysearch(T key) {
+
+        T key;
+        int low = 0;
+        int high = size - 1;
+        int mid;
+        int index = -1;
+
+        cout << "Enter key to search: ";
+        cin >> key;
+
+        while(low <= high) {
+
+            mid = (low + high) / 2;
+
+            if(arr[mid] == key) {
+                index = mid;
+                break;
+            }
+            else if(key < arr[mid]) {
+                high = mid - 1;
+            }
+            else {
+                low = mid + 1;
+            }
+        }
+
+        if(index == -1)
+            cout << "Element not found\n";
+        else
+            cout << "Element found at index " << index << endl;
+    }
 
 
 
