@@ -14,7 +14,8 @@ int main() {
     while(!st.empty()) {
         cout << st.top() << " ";
         st.pop();
-    }
 
+    }
+    
     return 0;
 }
