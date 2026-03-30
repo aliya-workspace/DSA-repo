@@ -17,6 +17,7 @@ class array{
     void bubblesort();
     void linearSearch(T key);
     void binarysearch(T key);
+    
    
 };
 
@@ -61,6 +62,8 @@ void array<T>:: linearSearch(T key){
     }
     return -1;
 }
+
+
 
 template <typename T>
 void array <T>:: binarysearch(T key) {
