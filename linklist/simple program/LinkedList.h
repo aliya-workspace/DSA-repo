@@ -38,14 +38,14 @@ void LinkedList<T>::insert(T value) {
     newNode->info = value;
     newNode->link = nullptr;
 
-    if (head == nullptr) {
+    if (head == nullptr) { //no nodes
         head = newNode;
     } else {
-        Node<T>* temp = head;
-        while (temp->link != nullptr) {
+        Node<T>* temp = head; // if node alredy
+        while (temp->link != nullptr) { //jab tak temp last node tak nhi ata 
             temp = temp->link;
         }
-        temp->link = newNode;
+        temp->link = newNode;     //last node per a chuka 
     }
 }
 
