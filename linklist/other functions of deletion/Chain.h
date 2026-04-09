@@ -27,6 +27,8 @@ public:
     void deleteAfterValue(T key);
     void deleteBeforeValue(T key);
     void insertAfterValue(T key, T val);
+    void insertBeforeValue(T key, T val);
+
 
 private:
     Node<T>* head;
@@ -142,6 +144,51 @@ void Chain<T>::insertAfterValue(T key, T val) {
     temp->link = newer;
 
     cout << "Inserted " << val << " after " << key << endl;
+}
+
+template <typename T>
+void Chain<T>::insertBeforeValue(T key, T val) {
+
+    // 🔹 Case 1: List empty
+    if (head == nullptr) {
+        cout << "List is empty\n";
+        return;
+    }
+
+    // 🔹 Case 2: Insert before head
+    if (head->info == key) {
+        Node<T>* newer = new Node<T>;
+        newer->info = val;
+        newer->link = head;
+        head = newer;
+
+        cout << "Inserted " << val << " before " << key << endl;
+        return;
+    }
+
+    // 🔹 General Case
+    Node<T>* prev = nullptr;
+    Node<T>* curr = head;
+
+    while (curr != nullptr && curr->info != key) {
+        prev = curr;
+        curr = curr->link;
+    }
+
+    // 🔹 If key not found
+    if (curr == nullptr) {
+        cout << "Value not found\n";
+        return;
+    }
+
+    // 🔹 Insert before node
+    Node<T>* newer = new Node<T>;
+    newer->info = val;
+
+    prev->link = newer;
+    newer->link = curr;
+
+    cout << "Inserted " << val << " before " << key << endl;
 }
 
 #endif
